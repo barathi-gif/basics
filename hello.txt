@@ -1,2 +1,38 @@
-hello world!
-ok 
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+
+class DemoMWSliverAppBarScreen1 extends StatefulWidget {
+  static String tag = '/DemoMWSliverAppBarScreen1';
+
+  @override
+  _DemoMWSliverAppBarScreen1State createState() => _DemoMWSliverAppBarScreen1State();
+}
+
+class _DemoMWSliverAppBarScreen1State extends State<DemoMWSliverAppBarScreen1> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  init() async {}
+
+  @override
+  void setState(fn) {
+    if (mounted) super.setState(fn);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              leading: IconButton(
+                icon: Icon(Icons.filter_1),
+                color: innerBoxIsScrolled
+                    ? Colors.black
+                    : Colors.white,
+                onPressed: () {
+                  // Do something
+                },
